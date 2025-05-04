@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Two Partner Sliders</title>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <style>
+        .slick-slide {
+            margin: 0px 20px;
+        }
+
+        .slick-slide img {
+            width: 100px;
+            height: auto;
+        }
+
+        .customer-logos {
+            margin: 30px 0;
+        }
+
+        .slick-slider {
+            position: relative;
+            display: block;
+            box-sizing: border-box;
+        }
+
+        .slick-list {
+            overflow: hidden;
+        }
+
+        .slick-track {
+            display: flex;
+        }
+
+        .slick-slide {
+            display: block;
+            float: left;
+        }
+
+        /* [dir='rtl'] .slick-slide {
+            float: right;
+        } */
+        .hori-slider-two {
+            direction: rtl;
+        }
+
+        .hori-slider-wrapper {
+            padding: 20px 0;
+            background: #f5f5f5;
+        }
+
+        .hori-slider-content {
+            /* padding: 20px;
+            color: #333;
+            position: absolute;
+            background: green;
+            z-index: 99;
+            border-radius: 50px;
+            height: 120px;
+            top: 0;
+            right: 0;
+            left: 0;
+
+            bottom: 0;
+            position-area: center;
+            align-content: center; */
+
+            position: absolute;
+            width: 170px;
+            height: 170px;
+            left: calc(50% - 270px/2);
+            top: calc(50% - 270px/2 - 1170.28px);
+            z-index: 99;
+            background: linear-gradient(90deg, #6EAC00 -46.98%, #27A9A5 115.95%);
+            border-radius: 135px;
+            top: 70px;
+            right: 0;
+            /* left: 0; */
+            bottom: 0;
+            align-content: center;
+
+        }
+
+        .hori-slider-content h2 {
+            /* justify-content: center; */
+            text-align: center;
+        }
+
+        .hori-slider-content a {
+            display: flex;
+            justify-content: center;
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container hori-slider-wrapper">
+        <h2>Our Top Partners</h2>
+        <section class="customer-logos hori-slider-one">
+            <div class="slide"><img
+                    src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"></div>
+            <div class="slide"><img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"></div>
+            <div class="slide"><img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"></div>
+            <div class="slide"><img
+                    src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg"></div>
+            <div class="slide"><img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg">
+            </div>
+            <div class="slide"><img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg">
+            </div>
+        </section>
+        <div class="hori-slider-content">
+            <h2>Want to Discuss ?
+            </h2>
+            <a href="#">Click Here</a>
+        </div>
+        <section class="customer-logos hori-slider-two" dir="rtl">
+            <div class="slide"><img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg">
+            </div>
+            <div class="slide"><img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg">
+            </div>
+            <div class="slide"><img
+                    src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg"></div>
+            <div class="slide"><img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"></div>
+            <div class="slide"><img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"></div>
+            <div class="slide"><img
+                    src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"></div>
+        </section>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('.hori-slider-one').slick({
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: false,
+                dots: false,
+                variableWidth: true,
+                centerMode: true,
+                // centerPadding: '60px',
+                pauseOnHover: false,
+                responsive: [
+                    { breakpoint: 768, settings: { slidesToShow: 4 } },
+                    { breakpoint: 520, settings: { slidesToShow: 3 } }
+                ]
+            });
+
+            $('.hori-slider-two').slick({
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: false,
+                dots: false,
+                variableWidth: true,
+                centerMode: true,
+                // centerPadding: '60px',
+                pauseOnHover: false,
+                rtl: true, // bottom slider moves in opposite direction
+                responsive: [
+                    { breakpoint: 768, settings: { slidesToShow: 4 } },
+                    { breakpoint: 520, settings: { slidesToShow: 3 } }
+                ]
+            });
+        });
+    </script>
+</body>
+
+</html>
